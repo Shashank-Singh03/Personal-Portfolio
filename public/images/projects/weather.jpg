@@ -1,0 +1,11 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#1a1a1a"/>
+  <rect x="50" y="50" width="500" height="300" fill="#2a2a2a" rx="10"/>
+  <circle cx="200" cy="150" r="30" fill="#39ff14" opacity="0.7"/>
+  <circle cx="350" cy="180" r="20" fill="#39ff14" opacity="0.5"/>
+  <circle cx="400" cy="140" r="25" fill="#39ff14" opacity="0.6"/>
+  <rect x="100" y="220" width="400" height="4" fill="#333" rx="2"/>
+  <rect x="100" y="220" width="280" height="4" fill="#39ff14" rx="2"/>
+  <text x="300" y="280" text-anchor="middle" fill="#39ff14" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Weather Dashboard</text>
+  <text x="300" y="310" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="16">Vue.js • D3.js • Chart.js</text>
+</svg>
