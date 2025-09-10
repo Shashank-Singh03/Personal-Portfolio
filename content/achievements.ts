@@ -20,7 +20,6 @@ const achievements: Achievement[] = [
     date: "2024-12-29",
     category: "certification",
     icon: "aws",
-    link: "https://aws.amazon.com/certification/certified-developer-associate/",
     metric: {
       value: "Foundation",
       label: "AWS Certification",

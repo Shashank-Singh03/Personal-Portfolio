@@ -77,7 +77,7 @@ export default function About() {
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p>
                 I&apos;m <strong className="text-foreground">{siteConfig.name}</strong>, 
-                I’m Shashank Kumar Singh, a Computer Science engineer who believes in progressive overload — both in the gym and in technology.
+                a Computer Science engineer who believes in progressive overload — both in the gym and in technology.
                 Just as I push for that extra rep, I push code that performs, scales, and makes an impact. With experience in frontend development (Angular, PrimeNG, React) and backend automation using Python (BeautifulSoup, Selenium), 
                 I’ve built scalable web applications and cloud-deployed ML models that deliver real results.
               </p>
