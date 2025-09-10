@@ -77,7 +77,7 @@ export function generateMetadata({
       title: metaTitle,
       description: metaDescription,
       images: [metaImage],
-      creator: `@${siteConfig.social.twitter?.split("/").pop() || siteConfig.name}`,
+      creator: `@${siteConfig.social.leetcode?.split("/").pop() || siteConfig.name}`,
     },
     
     robots: {
@@ -116,7 +116,7 @@ export function generatePersonStructuredData() {
     sameAs: [
       siteConfig.social.github,
       siteConfig.social.linkedin,
-      siteConfig.social.twitter,
+      siteConfig.social.leetcode,
     ].filter(Boolean),
     address: {
       "@type": "PostalAddress",

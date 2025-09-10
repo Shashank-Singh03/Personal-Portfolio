@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Code, Mail } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/shashanksingh",
+    href: "https://github.com/Shashank-Singh03",
     icon: Github,
   },
   {
@@ -14,13 +14,13 @@ const socialLinks = [
     icon: Linkedin,
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com/shashanksingh",
-    icon: Twitter,
+    name: "LeetCode",
+    href: "https://leetcode.com/u/Shxshxnk_/",
+    icon: Code,
   },
   {
     name: "Email",
-    href: "mailto:hello@shashanksingh.dev",
+    href: "shashankksingh09@gmail.com",
     icon: Mail,
   },
 ];

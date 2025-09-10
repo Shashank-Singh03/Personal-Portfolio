@@ -13,7 +13,7 @@ import {
   Send, 
   Github, 
   Linkedin, 
-  Twitter,
+  Code,
   MessageCircle,
   Calendar
 } from "lucide-react";
@@ -260,18 +260,18 @@ export default function Contact() {
                   </div>
                 </Link>
                 
-                {siteConfig.social.twitter && (
+                {siteConfig.social.leetcode && (
                   <Link
-                    href={siteConfig.social.twitter}
+                    href={siteConfig.social.leetcode}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
                   >
-                    <Twitter className="w-5 h-5 text-primary" />
+                    <Code className="w-5 h-5 text-primary" />
                     <div>
-                      <div className="font-medium">Twitter</div>
+                      <div className="font-medium">LeetCode</div>
                       <div className="text-sm text-muted-foreground">
-                        Follow for updates
+                        View my solutions
                       </div>
                     </div>
                   </Link>
@@ -292,9 +292,15 @@ export default function Contact() {
                   </Link>
                 </Button>
                 
-                <Button variant="outline" className="w-full justify-start">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Schedule a Call
+                <Button variant="outline" className="w-full justify-start" asChild>
+                  <Link 
+                    href="https://calendar.app.google/LgGsCYMHhMbrRNnF7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Schedule a Call
+                  </Link>
                 </Button>
                 
                 <Button variant="outline" className="w-full justify-start">

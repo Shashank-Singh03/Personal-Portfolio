@@ -10,7 +10,7 @@ const siteConfig: SiteConfig = {
   social: {
     github: "https://github.com/Shashank-Singh03",
     linkedin: "https://linkedin.com/in/shashanksingh",
-    twitter: "https://twitter.com/shashanksingh",
+    leetcode: "https://leetcode.com/u/Shxshxnk_/",
     website: "https://shashanksingh.dev",
   },
   seo: {

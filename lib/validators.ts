@@ -11,7 +11,7 @@ export const siteConfigSchema = z.object({
   social: z.object({
     github: z.string().url("Valid GitHub URL required"),
     linkedin: z.string().url("Valid LinkedIn URL required"),
-    twitter: z.string().url("Valid Twitter URL required").optional(),
+    leetcode: z.string().url("Valid LeetCode URL required").optional(),
     website: z.string().url("Valid website URL required").optional(),
   }),
   seo: z.object({

@@ -99,7 +99,7 @@ export const siteConfig = {
   social: {
     github: "https://github.com/yourusername",
     linkedin: "https://linkedin.com/in/yourusername",
-    twitter: "https://twitter.com/yourusername",
+    leetcode: "https://leetcode.com/u/Shxshxnk_/",
   },
   // ... more configuration
 };
