@@ -3,6 +3,8 @@ import { contactFormSchema } from "@/lib/validators";
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";
+import { Resend } from "resend";
+import { siteConfig } from "@/content/site";
 
 export async function POST(request: NextRequest) {
   try {
@@ -56,6 +58,61 @@ export async function POST(request: NextRequest) {
     
     // Write updated submissions back to file
     await writeFile(filePath, JSON.stringify(submissions, null, 2));
+    
+    // Send email via Resend
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    
+    if (!process.env.RESEND_API_KEY) {
+      console.warn("RESEND_API_KEY not found, skipping email send");
+    } else {
+      try {
+        await resend.emails.send({
+          from: "Portfolio Contact Form <onboarding@resend.dev>",
+          to: [siteConfig.email],
+          subject: `New Contact Form Submission: ${validatedData.subject}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #333; border-bottom: 2px solid #39ff14; padding-bottom: 10px;">
+                New Contact Form Submission
+              </h2>
+              
+              <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #333; margin-top: 0;">Contact Details</h3>
+                <p><strong>Name:</strong> ${validatedData.name}</p>
+                <p><strong>Email:</strong> <a href="mailto:${validatedData.email}">${validatedData.email}</a></p>
+                <p><strong>Subject:</strong> ${validatedData.subject}</p>
+                <p><strong>Submitted:</strong> ${new Date(timestamp).toLocaleString()}</p>
+              </div>
+              
+              <div style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+                <h3 style="color: #333; margin-top: 0;">Message</h3>
+                <p style="white-space: pre-wrap; line-height: 1.6;">${validatedData.message}</p>
+              </div>
+              
+              <div style="margin-top: 20px; padding: 15px; background: #e8f5e8; border-radius: 8px; border-left: 4px solid #39ff14;">
+                <p style="margin: 0; color: #333;">
+                  <strong>Quick Reply:</strong> 
+                  <a href="mailto:${validatedData.email}?subject=Re: ${validatedData.subject}" 
+                     style="color: #39ff14; text-decoration: none;">
+                    Click here to reply directly
+                  </a>
+                </p>
+              </div>
+              
+              <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+              <p style="color: #666; font-size: 12px; text-align: center;">
+                This email was sent from your portfolio contact form at ${new Date().toLocaleString()}
+              </p>
+            </div>
+          `,
+        });
+        
+        console.log(`Email sent successfully to ${siteConfig.email}`);
+      } catch (emailError) {
+        console.error("Failed to send email:", emailError);
+        // Don't fail the entire request if email fails, just log it
+      }
+    }
     
     // Log to server console
     console.log(`New contact submission from ${validatedData.name} (${validatedData.email})`);

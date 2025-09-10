@@ -52,7 +52,20 @@ A production-ready personal portfolio website with a gym/fitness visual theme bu
    pnpm install
    ```
 
-3. **Run the development server**
+3. **Set up environment variables**
+   ```bash
+   # Create .env.local file
+   touch .env.local
+   ```
+   
+   Add the following environment variables:
+   ```env
+   # Resend API Key for contact form emails
+   # Get your API key from: https://resend.com/api-keys
+   RESEND_API_KEY=re_your_api_key_here
+   ```
+
+4. **Run the development server**
    ```bash
    npm run dev
    # or
