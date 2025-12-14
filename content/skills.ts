@@ -11,6 +11,14 @@ const skills: Skill[] = [
     
   },
   {
+    name: "Angular",
+    category: "frontend",
+    level: 88,
+    icon: "angular",
+    description: "Enterprise-grade frontend framework for building scalable applications",
+   
+  },
+  {
     name: "Next.js",
     category: "frontend",
     level: 90,
@@ -21,7 +29,7 @@ const skills: Skill[] = [
   {
     name: "TypeScript",
     category: "frontend",
-    level: 88,
+    level: 92,
     icon: "typescript",
     description: "Type-safe JavaScript development with advanced type patterns",
   
@@ -43,6 +51,14 @@ const skills: Skill[] = [
    
   },
   {
+    name: "PrimeNG",
+    category: "frontend",
+    level: 82,
+    icon: "primeng",
+    description: "Rich UI component library for Angular applications",
+   
+  },
+  {
     name: "Framer Motion",
     category: "frontend",
     level: 80,
@@ -57,13 +73,21 @@ const skills: Skill[] = [
     category: "backend",
     level: 90,
     icon: "java",
-    description: "Object oriented programing language for backend development",
+    description: "Enterprise-grade object-oriented programming for scalable backend systems",
+    
+  },
+  {
+    name: "Spring Boot",
+    category: "backend",
+    level: 85,
+    icon: "spring",
+    description: "Production-ready framework for building microservices with Java",
     
   },
   {
     name: "Node.js",
     category: "backend",
-    level: 85,
+    level: 88,
     icon: "nodejs",
     description: "Server-side JavaScript runtime for scalable applications",
     
@@ -71,9 +95,9 @@ const skills: Skill[] = [
   {
     name: "Python",
     category: "backend",
-    level: 82,
+    level: 90,
     icon: "python",
-    description: "Versatile programming language for web development and automation",
+    description: "Versatile programming language for distributed systems and APIs",
    
   },
   {
@@ -87,9 +111,25 @@ const skills: Skill[] = [
   {
     name: "FastAPI",
     category: "backend",
-    level: 78,
+    level: 92,
     icon: "fastapi",
-    description: "Modern, fast web framework for building APIs with Python",
+    description: "Modern, high-performance web framework for building APIs with Python",
+    
+  },
+  {
+    name: "Socket.IO",
+    category: "backend",
+    level: 85,
+    icon: "socketio",
+    description: "Real-time bidirectional event-based communication library",
+    
+  },
+  {
+    name: "Kafka",
+    category: "backend",
+    level: 82,
+    icon: "kafka",
+    description: "Distributed event streaming platform for building real-time data pipelines",
     
   },
 
@@ -97,7 +137,7 @@ const skills: Skill[] = [
   {
     name: "PostgreSQL",
     category: "database",
-    level: 80,
+    level: 85,
     icon: "postgresql",
     description: "Advanced open-source relational database system",
    
@@ -110,14 +150,20 @@ const skills: Skill[] = [
     description: "NoSQL document database for modern applications",
     
   },
-  // Backend
-  
+  {
+    name: "Redis",
+    category: "database",
+    level: 88,
+    icon: "redis",
+    description: "In-memory data structure store for caching, queues, and rate limiting",
+    
+  },
 
   // DevOps
   {
     name: "Docker",
     category: "devops",
-    level: 75,
+    level: 88,
     icon: "docker",
     description: "Containerization platform for consistent deployments",
     
@@ -127,7 +173,15 @@ const skills: Skill[] = [
     category: "devops",
     level: 90,
     icon: "aws",
-    description: "Cloud computing services for scalable infrastructure",
+    description: "Cloud computing services including EC2, S3, and Lambda",
+    
+  },
+  {
+    name: "Nginx",
+    category: "devops",
+    level: 80,
+    icon: "nginx",
+    description: "High-performance web server and reverse proxy",
     
   },
   {
@@ -138,12 +192,20 @@ const skills: Skill[] = [
     description: "Frontend deployment platform optimized for Next.js",
     
   },
+  {
+    name: "OpenTelemetry",
+    category: "devops",
+    level: 75,
+    icon: "opentelemetry",
+    description: "Observability framework for cloud-native software",
+    
+  },
 
   // Tools
   {
     name: "Git",
     category: "tools",
-    level: 90,
+    level: 92,
     icon: "git",
     description: "Distributed version control system for code management",
     
@@ -162,6 +224,14 @@ const skills: Skill[] = [
     level: 70,
     icon: "figma",
     description: "Collaborative design tool for UI/UX development",
+    
+  },
+  {
+    name: "Lua",
+    category: "tools",
+    level: 72,
+    icon: "lua",
+    description: "Lightweight scripting language for Redis and system automation",
     
   },
 

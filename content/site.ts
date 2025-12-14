@@ -5,11 +5,11 @@ const siteConfig: SiteConfig = {
   role: "Software Developer",
   tagline: "Lifting Code, Shipping Gains",
   description: "Full-stack software developer with a passion for building scalable applications and solving complex problems. I approach coding with the same dedication and discipline as a serious athlete approaches their training.",
-  email: "shashankksingh09@gmail.com",
+  email: "shankksinghwork@gmail.com",
   location: "India",
   social: {
     github: "https://github.com/Shashank-Singh03",
-    linkedin: "https://linkedin.com/in/shashanksingh",
+    linkedin: "https://www.linkedin.com/in/shashank-kumar-singh-9856b1392",
     leetcode: "https://leetcode.com/u/Shxshxnk_/",
     website: "https://shashanksingh.dev",
   },

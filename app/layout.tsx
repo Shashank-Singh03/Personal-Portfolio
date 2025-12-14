@@ -52,7 +52,7 @@ export default function RootLayout({
               url: "https://shashanksingh.dev",
               sameAs: [
                 "https://github.com/shashanksingh",
-                "https://linkedin.com/in/shashanksingh",
+                "https://www.linkedin.com/in/shashank-kumar-singh-9856b1392",
               ],
             }),
           }}

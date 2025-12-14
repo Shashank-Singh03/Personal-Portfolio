@@ -10,7 +10,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/shashanksingh",
+    href: "https://www.linkedin.com/in/shashank-kumar-singh-9856b1392",
     icon: Linkedin,
   },
   {
@@ -20,7 +20,7 @@ const socialLinks = [
   },
   {
     name: "Email",
-    href: "shashankksingh09@gmail.com",
+    href: "mailto:shankksinghwork@gmail.com",
     icon: Mail,
   },
 ];
