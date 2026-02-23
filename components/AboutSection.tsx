@@ -276,11 +276,11 @@ function AboutContent({
 
       {/* z-40: Content — 70% centered column, white text root */}
       <div
-        className="flex flex-col h-full py-6 sm:py-8"
+        className="flex flex-col h-full py-10 sm:py-14"
         style={{
           position: "relative",
           zIndex: 40,
-          maxWidth: "64%",
+          maxWidth: "70%",
           marginInline: "auto",
           paddingInline: "clamp(0.5rem, 1.5vw, 1.5rem)",
           color: "white",
@@ -293,12 +293,12 @@ function AboutContent({
           animate={active ? "visible" : "hidden"}
           style={{
             fontFamily: "'Anton', 'Impact', sans-serif",
-            fontSize: "clamp(2rem, 6.5vw, 5.5rem)",
+            fontSize: "clamp(1.8rem, 6vw, 5.2rem)",
             letterSpacing: "-0.025em",
             lineHeight: 0.9,
             color: "white",
             WebkitTextStroke: "1.5px rgba(255,255,255,0.9)",
-            marginBottom: "clamp(0.8rem, 2vw, 1.5rem)",
+            marginBottom: "clamp(0.8rem, 2.1vw, 1.5rem)",
             willChange: "transform, opacity",
             userSelect: "none",
           }}
@@ -314,10 +314,10 @@ function AboutContent({
           className="bento-responsive"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+            gridTemplateColumns: "repeat(4, 1fr)",
             gridTemplateRows: "1fr 1fr",
             gap: "clamp(0.7rem, 1.2vw, 1.2rem)",
-            height: "clamp(340px, 42vh, 460px)",
+            flex: 1,
             fontFamily: "'Space Grotesk', 'Inter', sans-serif",
             color: "white",
           }}
@@ -328,23 +328,39 @@ function AboutContent({
               style={{
                 ...glass,
                 height: "100%",
-                padding: 0,
+                aspectRatio: "4 / 4.5",
+                padding: "12px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 overflow: "hidden",
+                background: "linear-gradient(155deg, rgba(15,42,24,0.8) 0%, rgba(6,20,12,0.8) 100%)",
               }}
             >
               {/* Profile image */}
-              <img
-                src="/images/projects/mypicture.jpg"
-                alt="Shashank Singh"
+              <div
+                className="profile-image-slot"
                 style={{
                   width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                  zIndex: 3,
+                  flex: 1,
+                  borderRadius: "12px",
+                  overflow: "hidden",
                   position: "relative",
+                  zIndex: 3,
                 }}
-              />
+              >
+                <img
+                  src="/images/projects/mypicture.jpg"
+                  alt="Shashank Singh"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "12px",
+                    display: "block",
+                  }}
+                />
+              </div>
             </GlassCard>
           </motion.div>
 
@@ -353,17 +369,17 @@ function AboutContent({
             <GlassCard style={{
               ...glass,
               height: "100%",
-              padding: "clamp(1rem, 2vh, 1.5rem) clamp(1.2rem, 2vw, 1.8rem)",
+              padding: "clamp(0.7rem, 1.4vh, 1rem) clamp(0.84rem, 1.4vw, 1.26rem)",
               display: "flex",
               flexDirection: "column",
             }}>
               {/* Heading — scales with viewport, dominates the card */}
               <p style={{
                 fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: "clamp(1.5rem, 2.8vw, 2.4rem)",
+                fontSize: "clamp(1.05rem, 2vw, 1.7rem)",
                 fontWeight: 700,
                 letterSpacing: "0.02em",
-                marginBottom: "clamp(0.6rem, 1.5vh, 1rem)",
+                marginBottom: "clamp(0.4rem, 1vh, 0.7rem)",
                 color: "rgba(140,255,180,0.9)",
                 lineHeight: 1.1,
               }}>
@@ -372,14 +388,14 @@ function AboutContent({
               {/* Body — flex:1 fills remaining vertical space */}
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "clamp(0.4rem, 0.8vh, 0.6rem)" }}>
                 <p style={{
-                  fontSize: "clamp(0.88rem, 1.15vw, 1.08rem)",
+                  fontSize: "clamp(0.62rem, 0.8vw, 0.76rem)",
                   lineHeight: 1.75,
                   color: "rgba(255,255,255,0.9)",
                 }}>
                   A dedicated software developer with a passion for building scalable applications and solving complex problems. From concept to deployment, I bring discipline and precision to every line of code.
                 </p>
                 <p style={{
-                  fontSize: "clamp(0.82rem, 1.05vw, 1rem)",
+                  fontSize: "clamp(0.57rem, 0.74vw, 0.7rem)",
                   lineHeight: 1.75,
                   color: "rgba(255,255,255,0.55)",
                 }}>
@@ -398,7 +414,7 @@ function AboutContent({
               flexDirection: "column",
               alignItems: "stretch",
               justifyContent: "space-evenly",
-              padding: "clamp(1rem, 2vh, 1.5rem) clamp(0.8rem, 1.2vw, 1.4rem)",
+              padding: "clamp(0.7rem, 1.4vh, 1rem) clamp(0.56rem, 0.84vw, 1rem)",
             }}>
               {[
                 { value: "7+", label: "Months Experience" },
@@ -417,7 +433,7 @@ function AboutContent({
                   {/* Number — scales relative to viewport, constrained to column */}
                   <div style={{
                     fontFamily: "'Anton', sans-serif",
-                    fontSize: "clamp(2rem, 4.5vw, 3.8rem)",
+                    fontSize: "clamp(1.4rem, 3.15vw, 2.66rem)",
                     lineHeight: 1,
                     letterSpacing: "-0.02em",
                     color: "rgba(140,255,180,0.9)",
@@ -428,7 +444,7 @@ function AboutContent({
                   </div>
                   {/* Label — em-relative to parent, no max-width */}
                   <div style={{
-                    fontSize: "clamp(0.65rem, 0.9vw, 0.85rem)",
+                    fontSize: "clamp(0.46rem, 0.63vw, 0.6rem)",
                     lineHeight: 1.35,
                     color: "rgba(255,255,255,0.6)",
                     letterSpacing: "0.04em",
@@ -444,7 +460,7 @@ function AboutContent({
 
           {/* 4. Role: Forward Deployment Engineer (col2 row2) */}
           <motion.div variants={bentoItem} style={{ gridColumn: "2 / 3", gridRow: "2 / 3", willChange: "transform, opacity" }}>
-            <GlassCard style={{ ...glass, height: "100%", padding: "1.2rem 1.3rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <GlassCard style={{ ...glass, height: "100%", padding: "0.84rem 0.9rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", height: "100%", justifyContent: "center" }}>
                 <div style={{
                   width: "1.9rem", height: "1.9rem",
@@ -459,7 +475,7 @@ function AboutContent({
                 }}>✦</div>
                 <div style={{
                   fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: "clamp(22px, 2vw, 30px)",
+                  fontSize: "clamp(15px, 1.4vw, 21px)",
                   fontWeight: 700,
                   lineHeight: 1.2,
                   marginBottom: "10px",
@@ -469,7 +485,7 @@ function AboutContent({
                   Forward Deployment Engineer
                 </div>
                 <div style={{
-                  fontSize: "clamp(14px, 1vw, 16px)",
+                  fontSize: "clamp(10px, 0.7vw, 11px)",
                   lineHeight: 1.6,
                   opacity: 0.75,
                   color: "rgba(255,255,255,0.85)",
@@ -483,7 +499,7 @@ function AboutContent({
 
           {/* 5. Role: Full Stack Developer (col3 row2) */}
           <motion.div variants={bentoItem} style={{ gridColumn: "3 / 4", gridRow: "2 / 3", willChange: "transform, opacity" }}>
-            <GlassCard style={{ ...glass, height: "100%", padding: "1.2rem 1.3rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <GlassCard style={{ ...glass, height: "100%", padding: "0.84rem 0.9rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", height: "100%", justifyContent: "center" }}>
                 <div style={{
                   width: "1.9rem", height: "1.9rem",
@@ -498,7 +514,7 @@ function AboutContent({
                 }}>⟡</div>
                 <div style={{
                   fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: "clamp(22px, 2vw, 30px)",
+                  fontSize: "clamp(15px, 1.4vw, 21px)",
                   fontWeight: 700,
                   lineHeight: 1.2,
                   marginBottom: "10px",
@@ -508,7 +524,7 @@ function AboutContent({
                   Full Stack Developer
                 </div>
                 <div style={{
-                  fontSize: "clamp(14px, 1vw, 16px)",
+                  fontSize: "clamp(10px, 0.7vw, 11px)",
                   lineHeight: 1.6,
                   opacity: 0.75,
                   color: "rgba(255,255,255,0.85)",
@@ -525,7 +541,7 @@ function AboutContent({
         <div
           aria-label="Tech stack"
           style={{
-            marginTop: "24px",
+            marginTop: "16px",
             flexShrink: 0,
             display: "flex",
             alignItems: "center",
