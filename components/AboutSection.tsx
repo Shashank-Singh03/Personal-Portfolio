@@ -315,9 +315,8 @@ function AboutContent({
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-            gridTemplateRows: "1fr 1fr",
+            gridTemplateRows: "auto auto",
             gap: "clamp(0.7rem, 1.2vw, 1.2rem)",
-            flex: 1,
             fontFamily: "'Space Grotesk', 'Inter', sans-serif",
             color: "white",
           }}
@@ -328,39 +327,23 @@ function AboutContent({
               style={{
                 ...glass,
                 height: "100%",
-                aspectRatio: "3 / 4",
-                padding: "24px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                padding: 0,
                 overflow: "hidden",
-                background: "linear-gradient(155deg, rgba(15,42,24,0.8) 0%, rgba(6,20,12,0.8) 100%)",
               }}
             >
               {/* Profile image */}
-              <div
-                className="profile-image-slot"
+              <img
+                src="/images/projects/mypicture.jpg"
+                alt="Shashank Singh"
                 style={{
                   width: "100%",
-                  flex: 1,
-                  borderRadius: "18px",
-                  overflow: "hidden",
-                  position: "relative",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
                   zIndex: 3,
+                  position: "relative",
                 }}
-              >
-                <img
-                  src="/images/projects/mypicture.jpg"
-                  alt="Shashank Singh"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "18px",
-                    display: "block",
-                  }}
-                />
-              </div>
+              />
             </GlassCard>
           </motion.div>
 
