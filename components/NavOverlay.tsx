@@ -9,7 +9,7 @@ import { NavItem } from "./NavItem";
 /* ─── Route map ────────────────────────────────────────────── */
 const NAV_LINKS = [
   { name: "Home",       href: "/",           samePageId: "hero"  },
-  { name: "About",      href: "/#about",     samePageId: "about" },
+  { name: "About",      href: "/about",      samePageId: null  },
   { name: "Skills",     href: "/skills",     samePageId: null    },
   { name: "Projects",   href: "/projects",   samePageId: null    },
   { name: "Experience", href: "/experience", samePageId: null    },

@@ -1,0 +1,40 @@
+﻿git : To https://github.co
+m/Shashank-Singh03/Persona
+l-Portfolio.git
+At line:1 char:1
++ git push origin main 
+2>&1 | Out-File -Encoding 
+utf8 C:\Users\Shashank ...
++ 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (T  
+  o https://gith...l-Po   
+ rtfolio.git:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+ ! [rejected]        main 
+-> main (fetch first)
+error: failed to push 
+some refs to 'https://gith
+ub.com/Shashank-Singh03/Pe
+rsonal-Portfolio.git'
+hint: Updates were 
+rejected because the 
+remote contains work that 
+you do not
+hint: have locally. This 
+is usually caused by 
+another repository 
+pushing to
+hint: the same ref. If 
+you want to integrate the 
+remote changes, use
+hint: 'git pull' before 
+pushing again.
+hint: See the 'Note about 
+fast-forwards' in 'git 
+push --help' for details.
