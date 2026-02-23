@@ -79,56 +79,59 @@ export default function Skills() {
           </Card>
         </div>
 
-        {/* All Skills Overview */}
-        <SkillPlates skills={skills} variant="plates" showProgress={true} />
-      </Section>
+        {/* Skill Categories Section */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-4">
+              Organized by Domain
+            </Badge>
+            <h2 className="text-3xl font-bold mb-4">Skill Categories</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Detailed breakdown of skills organized by technical domain and proficiency level
+            </p>
+          </div>
 
-      {/* Skills by Category */}
-      <AlternateSection
-        title="Skill Categories"
-        subtitle="Organized by Domain"
-        description="Detailed breakdown of skills organized by technical domain and proficiency level"
-      >
-        <Tabs defaultValue="frontend" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8">
-            {skillCategories.map((category) => (
-              <TabsTrigger 
-                key={category.value} 
-                value={category.value}
-                className="flex items-center gap-2"
-              >
-                {categoryIcons[category.value as keyof typeof categoryIcons]}
-                <span className="hidden sm:inline">{category.name}</span>
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          <Tabs defaultValue="frontend" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8">
+              {skillCategories.map((category) => (
+                <TabsTrigger 
+                  key={category.value} 
+                  value={category.value}
+                  className="flex items-center gap-2"
+                >
+                  {categoryIcons[category.value as keyof typeof categoryIcons]}
+                  <span className="hidden sm:inline">{category.name}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
 
-          {skillCategories.map((category) => {
-            const categorySkills = getSkillsByCategory(category.value);
-            
-            return (
-              <TabsContent key={category.value} value={category.value} className="space-y-6">
-                <div className="text-center mb-8">
-                  <div 
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
-                    style={{ backgroundColor: `${category.color}20`, color: category.color }}
-                  >
-                    {categoryIcons[category.value as keyof typeof categoryIcons]}
+            {skillCategories.map((category) => {
+              const categorySkills = getSkillsByCategory(category.value);
+              
+              return (
+                <TabsContent key={category.value} value={category.value} className="space-y-6">
+                  <div className="text-center mb-8">
+                    <div 
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
+                      style={{ backgroundColor: `${category.color}20`, color: category.color }}
+                    >
+                      {categoryIcons[category.value as keyof typeof categoryIcons]}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
+                    <p className="text-muted-foreground">{category.description}</p>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
-                  <p className="text-muted-foreground">{category.description}</p>
-                </div>
 
-                <SkillPlates 
-                  skills={categorySkills} 
-                  variant="cards" 
-                  showProgress={true} 
-                />
-              </TabsContent>
-            );
-          })}
-        </Tabs>
-      </AlternateSection>
+                  <SkillPlates 
+                    skills={categorySkills} 
+                    variant="cards" 
+                    showProgress={true} 
+                  />
+                </TabsContent>
+              );
+            })}
+          </Tabs>
+        </div>
+      </Section>
 
       {/* Learning Philosophy */}
       <Section

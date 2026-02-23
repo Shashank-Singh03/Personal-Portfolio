@@ -2,19 +2,25 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { 
-  Home, 
-  User, 
-  Zap, 
+import { useState, useEffect } from "react";
+import {
+  Home,
+  User,
+  Zap,
   Briefcase,
-  Code, 
-  Trophy, 
-  Mail, 
-  Menu
+  Code,
+  Trophy,
+  Mail,
+  Menu,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
@@ -29,9 +35,37 @@ const navigation = [
 export function Nav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+
+  /* Hide navbar while hero section is in viewport */
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+    if (!hero) {
+      setShowNav(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      setShowNav(window.scrollY > hero.offsetHeight * 0.6);
+    };
+
+    handleScroll(); // initial check
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header
+      className={`
+        sticky top-0 z-50 w-full border-b backdrop-blur
+        transition-all duration-500
+        ${
+          showNav
+            ? "bg-background/95 border-border supports-[backdrop-filter]:bg-background/60 opacity-100 translate-y-0"
+            : "bg-transparent border-transparent opacity-0 -translate-y-4 pointer-events-none"
+        }
+      `}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -49,7 +83,7 @@ export function Nav() {
             {navigation.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;
-              
+
               return (
                 <Link
                   key={item.name}
@@ -57,9 +91,10 @@ export function Nav() {
                   className={`
                     flex items-center space-x-1 px-3 py-2 text-sm font-medium transition-colors
                     chalk-effect
-                    ${isActive 
-                      ? "text-primary active" 
-                      : "text-muted-foreground hover:text-foreground"
+                    ${
+                      isActive
+                        ? "text-primary active"
+                        : "text-muted-foreground hover:text-foreground"
                     }
                   `}
                 >
@@ -89,12 +124,12 @@ export function Nav() {
                   </div>
                   <span className="font-bold">Shashank Singh</span>
                 </div>
-                
+
                 <nav className="flex flex-col space-y-2 px-4">
                   {navigation.map((item) => {
                     const Icon = item.icon;
                     const isActive = pathname === item.href;
-                    
+
                     return (
                       <Link
                         key={item.name}
@@ -102,9 +137,10 @@ export function Nav() {
                         onClick={() => setIsOpen(false)}
                         className={`
                           flex items-center space-x-3 px-3 py-3 text-sm font-medium rounded-md transition-colors
-                          ${isActive 
-                            ? "bg-primary/10 text-primary border-l-2 border-primary" 
-                            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                          ${
+                            isActive
+                              ? "bg-primary/10 text-primary border-l-2 border-primary"
+                              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                           }
                         `}
                       >
