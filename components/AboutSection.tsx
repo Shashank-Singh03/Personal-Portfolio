@@ -315,8 +315,9 @@ function AboutContent({
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-            gridTemplateRows: "auto auto",
+            gridTemplateRows: "1fr 1fr",
             gap: "clamp(0.7rem, 1.2vw, 1.2rem)",
+            height: "clamp(400px, 52vh, 560px)",
             fontFamily: "'Space Grotesk', 'Inter', sans-serif",
             color: "white",
           }}
