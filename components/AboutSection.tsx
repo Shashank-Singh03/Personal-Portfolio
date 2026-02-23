@@ -276,11 +276,11 @@ function AboutContent({
 
       {/* z-40: Content — 70% centered column, white text root */}
       <div
-        className="flex flex-col h-full py-10 sm:py-14"
+        className="flex flex-col h-full py-6 sm:py-8"
         style={{
           position: "relative",
           zIndex: 40,
-          maxWidth: "70%",
+          maxWidth: "64%",
           marginInline: "auto",
           paddingInline: "clamp(0.5rem, 1.5vw, 1.5rem)",
           color: "white",
@@ -293,12 +293,12 @@ function AboutContent({
           animate={active ? "visible" : "hidden"}
           style={{
             fontFamily: "'Anton', 'Impact', sans-serif",
-            fontSize: "clamp(2.6rem, 8.5vw, 7.5rem)",
+            fontSize: "clamp(2rem, 6.5vw, 5.5rem)",
             letterSpacing: "-0.025em",
             lineHeight: 0.9,
             color: "white",
             WebkitTextStroke: "1.5px rgba(255,255,255,0.9)",
-            marginBottom: "clamp(1.2rem, 3vw, 2.2rem)",
+            marginBottom: "clamp(0.8rem, 2vw, 1.5rem)",
             willChange: "transform, opacity",
             userSelect: "none",
           }}
@@ -317,7 +317,7 @@ function AboutContent({
             gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
             gridTemplateRows: "1fr 1fr",
             gap: "clamp(0.7rem, 1.2vw, 1.2rem)",
-            height: "clamp(400px, 52vh, 560px)",
+            height: "clamp(340px, 42vh, 460px)",
             fontFamily: "'Space Grotesk', 'Inter', sans-serif",
             color: "white",
           }}
